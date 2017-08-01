@@ -4208,7 +4208,9 @@ void home_all_axes() { gcode_G28(true); }
                         abl_grid_points_y = GRID_MAX_POINTS_Y;
         ABL_VAR bool do_topography_map;
       #else // Bilinear
-        uint8_t constexpr abl_grid_points_x = GRID_MAX_POINTS_X,
+        //aqee, change from readonly to variable, for changing it with G29 P parameter.
+        //uint8_t constexpr 
+        ABL_VAR uint8_t abl_grid_points_x = GRID_MAX_POINTS_X,
                           abl_grid_points_y = GRID_MAX_POINTS_Y;
       #endif
 
@@ -4320,9 +4322,10 @@ void home_all_axes() { gcode_G28(true); }
         #endif
       ;
 
-      #if ENABLED(AUTO_BED_LEVELING_LINEAR)
-
-        do_topography_map = verbose_level > 2 || parser.seen('T');
+      //aqee, add 'P' parameter for BiLinear, the same as Linear
+      //origin: 
+      //#if ENABLED(AUTO_BED_LEVELING_LINEAR)
+      #if ENABLED(AUTO_BED_LEVELING_LINEAR)||ENABLED(AUTO_BED_LEVELING_BILINEAR)
 
         // X and Y specify points in each direction, overriding the default
         // These values may be saved with the completed mesh
@@ -4335,7 +4338,11 @@ void home_all_axes() { gcode_G28(true); }
           return;
         }
 
+      #if ENABLED(AUTO_BED_LEVELING_LINEAR)
+        do_topography_map = verbose_level > 2 || parser.seen('T');
         abl2 = abl_grid_points_x * abl_grid_points_y;
+      #endif
+      
 
       #elif ENABLED(AUTO_BED_LEVELING_BILINEAR)
 
@@ -12816,3 +12823,4 @@ void loop() {
   endstops.report_state();
   idle();
 }
+

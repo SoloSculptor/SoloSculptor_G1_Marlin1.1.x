@@ -673,7 +673,7 @@
 #define Z_PROBE_SPEED_SLOW (Z_PROBE_SPEED_FAST / 2)
 
 // Use double touch for probing
-//#define PROBE_DOUBLE_TOUCH
+#define PROBE_DOUBLE_TOUCH
 
 /**
  * Z probes require clearance when deploying, stowing, and moving between
@@ -845,14 +845,16 @@
 #if ENABLED(AUTO_BED_LEVELING_LINEAR) || ENABLED(AUTO_BED_LEVELING_BILINEAR)
 
   // Set the number of grid points per dimension.
-  #define GRID_MAX_POINTS_X 3
+  #define GRID_MAX_POINTS_X 6
   #define GRID_MAX_POINTS_Y GRID_MAX_POINTS_X
 
+
   // Set the boundaries for probing (where the probe can reach).
-  #define LEFT_PROBE_BED_POSITION 15
-  #define RIGHT_PROBE_BED_POSITION 170
-  #define FRONT_PROBE_BED_POSITION 20
-  #define BACK_PROBE_BED_POSITION 170
+  //aqee, default area is fixed and not match UM2 bed.
+  #define LEFT_PROBE_BED_POSITION X_MIN_POS+X_MAX_LENGTH/7
+  #define RIGHT_PROBE_BED_POSITION X_MAX_POS-X_MAX_LENGTH/7
+  #define FRONT_PROBE_BED_POSITION Y_MIN_POS+Y_MAX_LENGTH/7
+  #define BACK_PROBE_BED_POSITION Y_MAX_POS-Y_MAX_LENGTH/7
 
   // The Z probe minimum outer margin (to validate G29 parameters).
   #define MIN_PROBE_EDGE 10
