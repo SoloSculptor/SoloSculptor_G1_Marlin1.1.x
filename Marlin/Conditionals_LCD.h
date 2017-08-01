@@ -69,8 +69,6 @@
 
   #if ENABLED(OLED_PANEL_TINYBOY2)
     #define U8GLIB_SSD1306
-    #define ULTIPANEL
-    #define NEWPANEL
     #define REVERSE_ENCODER_DIRECTION
     #define REVERSE_MENU_DIRECTION
   #endif
@@ -112,7 +110,10 @@
   #if ENABLED(ULTIMAKERCONTROLLER)              \
    || ENABLED(REPRAP_DISCOUNT_SMART_CONTROLLER) \
    || ENABLED(G3D_PANEL)                        \
-   || ENABLED(RIGIDBOT_PANEL)
+   || ENABLED(RIGIDBOT_PANEL)                   \
+   || ENABLED(REPRAPWORLD_KEYPAD)               \
+   || ENABLED(OLED_PANEL_TINYBOY2)              \
+   || ENABLED(ULTI_CONTROLLER)
     #define ULTIPANEL
     #define NEWPANEL
   #endif

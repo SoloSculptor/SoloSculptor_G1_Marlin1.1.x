@@ -1,0 +1,10 @@
+{
+  "builtInLibrariesFolders": "C:\\Program Files (x86)\\Arduino\\libraries",
+  "customBuildProperties": "build.warn_data_percentage=75,runtime.tools.avr-gcc.path=C:\\Program Files (x86)\\Arduino\\hardware\\tools\\avr,runtime.tools.avrdude.path=C:\\Program Files (x86)\\Arduino\\hardware\\tools\\avr,runtime.tools.arduinoOTA.path=C:\\Program Files (x86)\\Arduino\\hardware\\tools\\avr",
+  "fqbn": "arduino:avr:uno",
+  "hardwareFolders": "C:\\Program Files (x86)\\Arduino\\hardware",
+  "otherLibrariesFolders": "C:\\Users\\Aqee\\Documents\\Arduino\\libraries",
+  "runtime.ide.version": "10600",
+  "sketchLocation": "c:\\Users\\Aqee\\Documents\\GitHub\\SoloSculptor_G1_Marlin1.1.x\\Marlin\\Conditionals_LCD.h",
+  "toolsFolders": "C:\\Program Files (x86)\\Arduino\\tools-builder,C:\\Program Files (x86)\\Arduino\\hardware\\tools\\avr"
+}
