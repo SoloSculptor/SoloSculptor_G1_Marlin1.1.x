@@ -76,7 +76,7 @@
 // build by the user have been successfully uploaded into firmware.
 #define STRING_CONFIG_H_AUTHOR "SoloSculptor" // Who made the changes.
 #define SHOW_BOOTSCREEN
-#define STRING_SPLASH_LINE1 "Aqee based on Marlin v1.1.13" // will be shown during bootup in line 1
+#define STRING_SPLASH_LINE1 "Aqee based on Marlin v1.1.3" // will be shown during bootup in line 1
 #define STRING_SPLASH_LINE2 "SoloSculptor.com"         // will be shown during bootup in line 2
 
 //
